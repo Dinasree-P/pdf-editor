@@ -15,7 +15,8 @@ export async function save(pdfFile, objects, name) {
   }
   const pagesProcesses = pdfDoc.getPages().map(async (page, pageIndex) => {
     const pageObjects = objects[pageIndex];
-    // 'y' starts from bottom in PDFLib, use this to calculate y
+    //size
+    
     const pageHeight = page.getHeight();
     const embedProcesses = pageObjects.map(async (object) => {
       if (object.type === 'image') {
@@ -86,7 +87,8 @@ export async function save(pdfFile, objects, name) {
         };
       }
     });
-    // embed objects in order
+    
+    
     const drawProcesses = await Promise.all(embedProcesses);
     drawProcesses.forEach((p) => p());
   });
