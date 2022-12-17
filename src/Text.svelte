@@ -59,10 +59,11 @@
     operation = "";
   }
   async function onPaste(e) {
-    // get text only
+    
+    // text only
     const pastedText = e.clipboardData.getData("text");
     document.execCommand("insertHTML", false, pastedText);
-    // await tick() is not enough
+   
     await timeout();
     sanitize();
   }
@@ -83,10 +84,10 @@
       } else if (focusNode instanceof HTMLBRElement) {
         editable.insertBefore(document.createElement("br"), focusNode);
       }
-      // the caret is at a text line but not end
+      
       else if (focusNode.textContent.length !== focusOffset) {
         document.execCommand("insertHTML", false, "<br>");
-        // the carat is at the end of a text line
+        
       } else {
         let br = focusNode.nextSibling;
         if (br) {
@@ -95,7 +96,7 @@
           br = editable.appendChild(document.createElement("br"));
           br = editable.appendChild(document.createElement("br"));
         }
-        // set selection to new line
+        //  selection to new line
         selection.collapse(br, 0);
       }
     }
