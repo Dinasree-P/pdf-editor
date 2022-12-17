@@ -38,10 +38,10 @@
         fetchFont(currentFont);
         prepareAssets();
       }, 5000);
-      // const imgBlob = await (await fetch("/test.jpg")).blob();
+      
       // addImage(imgBlob);
-      // addTextField("測試!");
-      // addDrawing(200, 100, "M30,30 L100,50 L50,70", 0.5);
+      // addDrawing;
+      
     } catch (e) {
       console.log(e);
     }
@@ -263,7 +263,7 @@
       class:bg-blue-700={pages.length === 0 || saving || !pdfFile}>
       {saving ? 'Saving' : 'Save'}
     </button>
-    <a href="https://github.com/ShizukuIchi/pdf-editor">
+    <a href="https://github.com/Dinasree-P/pdfeditor">
       <img
         src="/GitHub-Mark-32px.png"
         alt="A GitHub icon leads to personal GitHub page" />
@@ -357,7 +357,7 @@
     </div>
   {:else}
     <div class="w-full flex-grow flex justify-center items-center">
-      <span class=" font-bold text-3xl text-gray-500">Drag something here</span>
+      <span class=" font-bold text-3xl text-gray-500">Drag to here</span>
     </div>
   {/if}
 </main>
