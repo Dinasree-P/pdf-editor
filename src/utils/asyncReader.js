@@ -34,7 +34,8 @@ export function readAsDataURL(file) {
 
 export async function readAsPDF(file) {
   const pdfjsLib = await getAsset('pdfjsLib');
-  // Safari possibly get webkitblobresource error 1 when using origin file blob
+  
+  
   const blob = new Blob([file]);
   const url = window.URL.createObjectURL(blob);
   return pdfjsLib.getDocument(url).promise;
